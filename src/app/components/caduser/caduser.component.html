@@ -1,0 +1,49 @@
+<div class="register-container">
+    <h2>Cadastrar Usuário</h2>
+    <form [formGroup]="CadUserForm" (ngSubmit)="onCadUser()">
+        <!-- Nome -->
+        <div class="mb-3">
+            <label for="name" class="form-label">Nome</label>
+            <input type="text" class="form-control" formControlName="name" placeholder="Seu Nome">
+        </div>
+        
+        <!-- E-mail -->
+        <div class="mb-3">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" class="form-control" formControlName="email" placeholder="Seu e-mail">
+        </div>
+        
+        <!-- Telefone -->
+        <div class="mb-3">
+            <label for="phone" class="form-label">Telefone</label>
+            <input type="tel" class="form-control"  formControlName="phone" placeholder="(XX) XXXXX-XXXX">
+        </div>
+        
+        <!-- Senha -->
+        <div class="mb-3">
+            <label for="password" class="form-label">Senha</label>
+            <input type="password" class="form-control"  formControlName="password" placeholder="Senha">
+        </div>
+        
+        <!-- Confirmar Senha -->
+        <div class="mb-3">
+            <label for="confirm-password" class="form-label">Confirmar Senha</label>
+            <input type="password" class="form-control"  placeholder="Confirme sua senha">
+        </div>
+
+         <!-- Tipo de Usuário -->
+         <div class="mb-3">
+            <label for="type_user" class="form-radio-label">Tipo de Usuário</label>
+            <div>
+                <label for="type_user" class="form-radio-label">Usuário</label>
+                <input type="radio" class="form-radio-input" formControlName="role" value="0">
+                <label for="type_user" class="form-radio-label">Administrador</label>
+                <input type="radio" class="form-radio-input" formControlName="role" value="1">
+            </div>
+            
+        </div>
+        
+        <!-- Botão de Cadastro -->
+        <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
+    </form>
+</div>

@@ -1,0 +1,28 @@
+<div class="login-container">
+    <!-- Coluna com imagem e texto inspirador -->
+    <div class="login-image-container">
+        <div class="login-image-text">
+            <p>Bem-vindo! Acesse sua conta e explore nosso conteúdo exclusivo.</p>
+        </div>
+    </div>
+
+    <!-- Coluna com o formulário de login -->
+    <div class="login-form">
+        <h2 class="text-center">Login</h2>
+        <form [formGroup]="LoginForm" (ngSubmit)="onLogin()">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" formControlName="email" id="email" placeholder="Seu email" required>
+            </div>
+            <div class="mb-4">
+                <label for="password" class="form-label">Senha</label>
+                <input type="password" class="form-control" formControlName="password" id="password" placeholder="Sua senha" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Entrar</button>
+            <div class="text-center mt-3">
+                <a href="/recuperar-senha">Esqueceu sua senha?</a>
+            </div>
+        </form>
+        <app-modal #statusModal></app-modal>
+    </div>
+</div>

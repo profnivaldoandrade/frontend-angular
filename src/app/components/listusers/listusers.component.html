@@ -1,0 +1,33 @@
+<div class="list-container">
+    <h2 class="text-center">Lista de Usuários</h2>
+    <!-- Botão para adicionar novo usuário -->
+    <div class="text-end mb-3">
+        <button class="btn btn-primary" (click)="cadUser()">
+            + Novo Usuário
+        </button>
+    </div>
+    
+    <!-- Tabela de usuários -->
+    <table class="table table-bordered table-hover">
+        <thead class="table-light">
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col" class="text-center">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Exemplo de usuário - repita essa linha para cada usuário da lista -->
+            @for(user of userList$ | async; track user;){
+            <tr>
+                <td>{{user.name}}</td>
+                <td class="text-center">
+                    <button class="btn btn-sm btn-success btn-action">Editar</button>
+                    <button class="btn btn-sm btn-danger btn-action">Excluir</button>
+                </td>
+            </tr>
+        }
+            <!-- Fim do exemplo de usuário -->
+        </tbody>
+    </table>
+</div>
+
